@@ -7,6 +7,7 @@ async function run() {
     const tagPath = "refs/tags/"
     if (ref && ref.startsWith(tagPath)) {
       const tag = ref.substr(tagPath.length, ref.length);
+      console.log("Found tag ${tag}");
       core.exportVariable("GITHUB_TAG_NAME", tag);
       core.setOutput('tag', tag);
     }
